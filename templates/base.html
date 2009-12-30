@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{{ page_title }}</title>
+<link href="/static/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+
+<body>
+
+<table id="container"><tr><td>
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" class="body">
+
+
+  <tr>
+    <td colspan="3" class="margin-area" width="100%" valign="bottom" align="left">
+      <table border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr style="padding: 10px;">
+          <td align="left"><span class="blog_name"><a href="/" style="text-decoration: none; font-color="#0000FF">{{ blog_name }}</a></span></td>
+          <td align="left" style="padding-left: 10px;">
+
+<script type="text/javascript"><!--
+	google_ad_client = "{{ adsense_publisher_id }}";
+	/* 728x90, created 12/26/09 */
+	google_ad_slot = "7306824787";
+	google_ad_width = 728;
+	google_ad_height = 90;
+	//-->
+	</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+          <!--
+            <div class="text-button" style="width: 10em"><a href="{{ blog_path }}">Top of the blog.</a></div>
+            <div class="text-button" style="width: 10em"><a href="{{ archive_path }}">Complete archive.</a></div>&nbsp;&nbsp;&nbsp;
+          -->
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+  <td colspan="3">
+
+<div id="cse" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function(){
+    var customSearchControl = new google.search.CustomSearchControl('{{ google_custom_search_unique_id }}');
+    customSearchControl.setResultSetSize(google.search.Search.SMALL_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+
+
+  </td>
+  </tr>
+
+  <tr valign="top">
+    <td width="1%" class="margin-area" align="left">
+
+    </td>
+    <td width="50%" class="body">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="10">&nbsp;</td>
+          <td align="left">
+            <div id="articles_container">
+              {% block main %}{% endblock %}
+            </div>
+          </td>
+          <td width="10">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+    <td width="30%" class="margin-area">
+
+    <div style="padding: 2px; white-space: nowrap; text-align: center;">
+
+    Follow Developer Advocate<br/>
+    <a href="http://www.twitter.com/{{ twitter_username }}" target="_blank" title="Follow via Twitter">
+    <img src="/static/twitter.png" height="64" width="64" border="0"/></a>
+    <a href="http://feeds.feedburner.com/{{ feedburner_account }}" target="_blank" title="Follow via RSS">
+    <img src="/static/rss.png" height="64" width="64" border="0"/></a>
+    <a href="http://feedburner.google.com/fb/a/mailverify?uri={{ feedburner_account }}" target="_blank" title="Follow via Email">
+    <img src="/static/email.png" height="64" width="64" border="0"/></a>
+    <a href="{{ full_facebook_fan_page_url }}" target="_blank" title="Follow via Facebook">
+    <img src="/static/facebook.png" height="64" width="64" border="0"/></a>
+
+    </div>
+
+    <script type="text/javascript"><!--
+	google_ad_client = "{{ adsense_publisher_id }}";
+	/* 250x250, created 12/28/09 */
+	google_ad_slot = "7647795980";
+	google_ad_width = 250;
+	google_ad_height = 250;
+	//-->
+	</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+      <div id="right-margin">
+        {% block recent_list %}{% endblock %}
+        {% block date_list %}{% endblock %}
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td valign="top" class="margin-area" width="20%" align="left">&nbsp;</td>
+    <td class="margin-area" width="60%" valign="middle" align="center">
+
+
+          <div>
+	      {% block tag_list %}{% endblock %}
+      </div>
+
+    </td>
+    <td valign="top" class="margin-area" width="20%" align="right">&nbsp;</td>
+  </tr>
+
+</table>
+
+</td></tr></table>
+
+<script src='{{ wibiya_javascript_source_link }}' type='text/javascript'></script>
+
+<script type="text/javascript">
+window.google_analytics_uacct = "{{ google_analytics_account_id }}";
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{ google_analytics_account_id }}']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+
+</script>
+
+</body>
+</html>

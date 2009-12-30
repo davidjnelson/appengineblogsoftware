@@ -1,0 +1,31 @@
+application: developeradvocate
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /xd_receiver.htm
+  static_files: static/xd_receiver.htm
+  upload: static/xd_receiver.htm
+
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
+
+- url: /favicon.ico
+  static_files: static/favicon.ico
+  upload: static/favicon.ico
+
+- url: /admin
+  script: admin.py
+  login: admin
+
+- url: /admin/.*
+  script: admin.py
+  login: admin
+
+- url: /.*
+  script: blog.py
