@@ -1,0 +1,41 @@
+
+  <table class="article" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr class="article_title_line">
+      <td class="article_title"><a href="{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a></td>
+      <td class="timestamp">{{ article.published_when|date:"j F, Y \a\t g:i A" }}</td>
+    </tr>
+    <tr>
+      {% if article.draft %}
+      <td colspan="2" class="article-body-draft">
+      {% else %}
+      <td colspan="2" class="article-body">
+      {% endif %}
+
+      <div style="padding: 5px; margin: 2px; float: left;">
+
+	  <script type="text/javascript">
+
+	  	tweetmeme_source = '{{ twitter_username }}';
+		tweetmeme_service = 'bit.ly';
+
+	  </script>
+
+      <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+
+	  <br/>&nbsp;<br/>
+
+	  <a name="fb_share" type="box_count" href="http://www.facebook.com/sharer.php">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+
+      </div>
+
+      {{ article.html }}
+
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="article-footer">
+        <a href="{{ article.url }}#disqus_thread" class="reference">Permalink</a> | Tags: {{ article.tags|join:", " }}</td>
+    </tr>
+  </table>
+
+<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/{{ disqus_username }}/embed.js"></script><noscript><a href="http://disqus.com/forums/{{ disqus_username }}/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus Comments</span></a>
